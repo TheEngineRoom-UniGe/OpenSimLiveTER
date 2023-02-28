@@ -220,8 +220,8 @@ void ConnectToDataStream(double inputSeconds, int inputThreads) {
 	//IKTool.updateOrdered(true, quatTable, vm.orderIndex, 0);
 
 
-	std::thread producer(producerThread, std::ref(genericDataReader), std::ref(vm));
-	std::thread consumer(consumerThread, std::ref(vm), std::ref(IKTool), std::ref(threadPoolContainer));
+	//std::thread producer(producerThread, std::ref(genericDataReader), std::ref(vm));
+	//std::thread consumer(consumerThread, std::ref(vm), std::ref(IKTool), std::ref(threadPoolContainer));
 
 	/*do {
 
@@ -237,28 +237,44 @@ void ConnectToDataStream(double inputSeconds, int inputThreads) {
 
 	} while (clockDuration.count() < inputSeconds);*/
 
+	auto clockStart = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> clockDuration;
+
 	// TODO: remove producer and consumer to keep a single thread structure
-	
-	producer.join();
-	consumer.join();
+	while (true) {
+		std::chrono::duration<double> duration = std::chrono::high_resolution_clock::now() - vm.clockStart;
+		double time = duration.count();
 
-	std::chrono::duration<double> clockDuration = std::chrono::high_resolution_clock::now() - vm.clockStart;
-	double finalTime = clockDuration.count();
+		// update new quaternion table but don't get it yet
+		genericDataReader.updateQuaternionTable();
+		OpenSim::TimeSeriesTableQuaternion updated_table = genericDataReader.getQuaternionTable();
+		//updateConcurrentIKTool(std::ref(IKTool), std::ref(vm), updated_table, time, vm.orderIndex);
+		IKTool.setQuaternion(updated_table);
+		clockDuration = (std::chrono::high_resolution_clock::now() - clockStart);
+		IKTool.setTime(clockDuration.count());
 
-	std::cout << "Performed " << vm.orderIndex << " iterations in " << finalTime << " seconds." << std::endl;
-	std::cout << "Frame rate: " << ((double)vm.orderIndex / finalTime) << " iterations per second." << std::endl;
+		// calculate the IK and update the visualization
+		IKTool.update(false);
+		//producer.join();
+		//consumer.join();
 
-	if (vm.saveIKResults) {
-		std::cout << "Saving IK results to file..." << std::endl;
-		if (vm.orderIndex < 100000) {
-			IKTool.reportToFile();
-		}
-		else
-		{
-			std::cout << "More than 100 000 iterations calculated, as a safety precaution program is not saving results to file!" << std::endl;
+		std::chrono::duration<double> clockDuration = std::chrono::high_resolution_clock::now() - vm.clockStart;
+		double finalTime = clockDuration.count();
+
+		std::cout << "Performed " << vm.orderIndex << " iterations in " << finalTime << " seconds." << std::endl;
+		std::cout << "Frame rate: " << ((double)vm.orderIndex / finalTime) << " iterations per second." << std::endl;
+
+		if (vm.saveIKResults) {
+			std::cout << "Saving IK results to file..." << std::endl;
+			if (vm.orderIndex < 100000) {
+				IKTool.reportToFile();
+			}
+			else
+			{
+				std::cout << "More than 100 000 iterations calculated, as a safety precaution program is not saving results to file!" << std::endl;
+			}
 		}
 	}
-	
 	/*std::vector<double> IKTimes;
 	double mean = 0;
 	for (unsigned int j = 0; j < finishTimes.size(); ++j) {
