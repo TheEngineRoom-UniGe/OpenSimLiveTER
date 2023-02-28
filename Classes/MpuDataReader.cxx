@@ -236,42 +236,50 @@ OpenSim::TimeSeriesTable_<SimTK::Quaternion>  MpuDataReader::generateNewQuaterni
 	// create a quaternion matrix for time series table
 	SimTK::Matrix_<SimTK::Quaternion> quatMatrix(1, labelsSize_);
 	//std::cout << "generate quaternion matrix" << std::endl;
+
 	char buffer[BUFFSIZE];
-	Message msg = this->ReadNewMsg(buffer);
-	auto link_name = this->id_to_joint[msg.id];
-	// generate a new identity quaternion on a spot in the matrix
+	int msg_counter = 0;
+
+	while (msg_counter<11){
+		// loop to read 11 messages before submitting the quaternion table to the following part of the code
+		// could be changed to a "time-based approach" to set a fixed frequency
+		Message msg = this->ReadNewMsg(buffer);
+
+		auto link_name = this->id_to_joint[msg.id];
+		// generate a new identity quaternion on a spot in the matrix
 	
 
-	//std::cout << "calibration samples: " << std::endl;
-	//std::cout << calibration_.size() << std::endl;
-	int found_idx = -1;
-	for (int i = 0; i < labelsSize_; i++) {
-		if (labels_[i] == link_name) {
-			//std::cout << i << std::endl;
-			found_idx = i;
-			break;
+		//std::cout << "calibration samples: " << std::endl;
+		//std::cout << calibration_.size() << std::endl;
+		int found_idx = -1;
+		for (int i = 0; i < labelsSize_; i++) {
+			if (labels_[i] == link_name) {
+				//std::cout << i << std::endl;
+				found_idx = i;
+				break;
+			}
 		}
-	}
-	//std::cout << std::endl << std::endl << std::endl;
-	//std::cout << quat << std::endl;
-	calibration_[found_idx] = msg;
-	// loop through all elements of labels_ (the vector containing labels for IMUs on the model)
-	for (unsigned int m = 0; m < labelsSize_; ++m) {
-		SimTK::Quaternion quat(	calibration_[m].quaternion[3],
-								calibration_[m].quaternion[0],
-								calibration_[m].quaternion[1],
-								calibration_[m].quaternion[2]);
-		//if (m == 0) {
-		//	std::cout << quat << std::endl;
-		//	std::cout << link_name << std::endl;
-		//	}
-			quatMatrix.set(0, m, quat);
-		if (saveQuaternionsToFile_) {
-			//std::cout << quat << std::endl;
-			quaternions_[m] = quat;
+		//std::cout << std::endl << std::endl << std::endl;
+		//std::cout << quat << std::endl;
+		calibration_[found_idx] = msg;
+		// loop through all elements of labels_ (the vector containing labels for IMUs on the model)
+		for (unsigned int m = 0; m < labelsSize_; ++m) {
+			SimTK::Quaternion quat(	calibration_[m].quaternion[3],
+									calibration_[m].quaternion[0],
+									calibration_[m].quaternion[1],
+									calibration_[m].quaternion[2]);
+			//if (m == 0) {
+			//	std::cout << quat << std::endl;
+			//	std::cout << link_name << std::endl;
+			//	}
+				quatMatrix.set(0, m, quat);
+			if (saveQuaternionsToFile_) {
+				//std::cout << quat << std::endl;
+				quaternions_[m] = quat;
+			}
 		}
+		msg_counter++;
 	}
-
 	updateTime();
 
 	// finally create/overwrite the time series table using the identity quaternion data
