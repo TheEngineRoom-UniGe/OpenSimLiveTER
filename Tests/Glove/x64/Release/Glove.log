@@ -1,0 +1,2 @@
+﻿  Glove.cpp
+c:\opensimlive\opensimlive-master\tests\glove\glove.cpp(3): fatal error C1083: Non è possibile aprire il file inclusione: 'OpenSimLiveConfig.h': No such file or directory

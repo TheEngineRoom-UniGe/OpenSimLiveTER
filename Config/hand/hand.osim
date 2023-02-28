@@ -1,0 +1,3880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSimDocument Version="10905">
+	<Model name="DLR kinematic hand model (subject 1, version 2.1)">
+		<defaults>
+			<ControlLinear name="default">
+				<is_model_control> true </is_model_control>
+				<extrapolate> true </extrapolate>
+				<default_min>      -1.00000000 </default_min>
+				<default_max>       1.00000000 </default_max>
+				<filter_on> false </filter_on>
+				<use_steps> false </use_steps>
+				<x_nodes/>
+				<min_nodes/>
+				<max_nodes/>
+				<kp>     100.00000000 </kp>
+				<kv>      20.00000000 </kv>
+			</ControlLinear>
+			<CoordinateActuator name="default">
+				<isDisabled> false </isDisabled>
+				<!--Minimum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<min_control> -infinity </min_control>
+				<!--Maximum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<max_control> infinity </max_control>
+				<coordinate> Unassigned </coordinate>
+				<optimal_force>     300.00000000 </optimal_force>
+			</CoordinateActuator>
+			<PointActuator name="default">
+				<isDisabled> false </isDisabled>
+				<!--Minimum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<min_control> -infinity </min_control>
+				<!--Maximum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<max_control> infinity </max_control>
+				<body>  </body>
+				<point>       0.00000000       0.00000000       0.00000000 </point>
+				<point_is_global> false </point_is_global>
+				<direction>      -1.00000000      -0.00000000      -0.00000000 </direction>
+				<force_is_global> true </force_is_global>
+				<optimal_force>    1000.00000000 </optimal_force>
+			</PointActuator>
+			<TorqueActuator name="default">
+				<isDisabled> false </isDisabled>
+				<!--Minimum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<min_control> -infinity </min_control>
+				<!--Maximum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<max_control> infinity </max_control>
+				<bodyA>  </bodyA>
+				<bodyB>  </bodyB>
+				<torque_is_global> true </torque_is_global>
+				<axis>      -1.00000000      -0.00000000      -0.00000000 </axis>
+				<optimal_force>     300.00000000 </optimal_force>
+			</TorqueActuator>
+			<Thelen2003Muscle name="default">
+				<isDisabled> false </isDisabled>
+				<!--Minimum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<min_control>       0.01000000 </min_control>
+				<!--Maximum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<max_control>       1.00000000 </max_control>
+				<GeometryPath name="">
+					<PathPointSet name="">
+						<objects/>
+						<groups/>
+					</PathPointSet>
+					<VisibleObject name="">
+						<!--Set of geometry files and associated attributes, allow .vtp, .stl,
+						    .obj-->
+						<GeometrySet name="">
+							<objects/>
+							<groups/>
+						</GeometrySet>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+						<!--transform relative to owner specified as 3 rotations (rad) followed by
+						    3 translations rX rY rZ tx ty tz-->
+						<transform>      -0.00000000       0.00000000      -0.00000000       0.00000000       0.00000000       0.00000000 </transform>
+						<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes>
+						<!--Display Pref. 0:Hide 1:Wire 3:Flat 4:Shaded Can be overriden for
+						    individual geometries-->
+						<display_preference> 4 </display_preference>
+					</VisibleObject>
+					<PathWrapSet name="">
+						<objects/>
+						<groups/>
+					</PathWrapSet>
+				</GeometryPath>
+				<!--maximum isometric force of the muscle fibers-->
+				<max_isometric_force>     546.00000000 </max_isometric_force>
+				<!--optimal length of the muscle fibers-->
+				<optimal_fiber_length>       0.05350000 </optimal_fiber_length>
+				<!--resting length of the tendon-->
+				<tendon_slack_length>       0.07800000 </tendon_slack_length>
+				<!--angle between tendon and fibers at optimal fiber length-->
+				<pennation_angle>       0.13962634 </pennation_angle>
+				<!--time constant for ramping up of muscle activation-->
+				<activation_time_constant>       0.01000000 </activation_time_constant>
+				<!--time constant for ramping down of muscle activation-->
+				<deactivation_time_constant>       0.04000000 </deactivation_time_constant>
+				<!--maximum contraction velocity at full activation in fiber lengths per
+				    second-->
+				<Vmax>      10.00000000 </Vmax>
+				<!--maximum contraction velocity at low activation in fiber lengths per
+				    second-->
+				<Vmax0>       5.00000000 </Vmax0>
+				<!--tendon strain due to maximum isometric muscle force-->
+				<FmaxTendonStrain>       0.03300000 </FmaxTendonStrain>
+				<!--passive muscle strain due to maximum isometric muscle force-->
+				<FmaxMuscleStrain>       0.60000000 </FmaxMuscleStrain>
+				<!--shape factor for Gaussian active muscle force-length relationship-->
+				<KshapeActive>       0.50000000 </KshapeActive>
+				<!--exponential shape factor for passive force-length relationship-->
+				<KshapePassive>       4.00000000 </KshapePassive>
+				<!--passive damping in the force-velocity relationship-->
+				<damping>       0.05000000 </damping>
+				<!--force-velocity shape factor-->
+				<Af>       0.30000000 </Af>
+				<!--maximum normalized lengthening force-->
+				<Flen>       1.80000000 </Flen>
+			</Thelen2003Muscle>
+			<Schutte1993Muscle name="default">
+				<isDisabled> false </isDisabled>
+				<!--Minimum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<min_control>       0.01000000 </min_control>
+				<!--Maximum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<max_control>       1.00000000 </max_control>
+				<GeometryPath name="">
+					<PathPointSet name="">
+						<objects/>
+						<groups/>
+					</PathPointSet>
+					<VisibleObject name="">
+						<!--Set of geometry files and associated attributes, allow .vtp, .stl,
+						    .obj-->
+						<GeometrySet name="">
+							<objects/>
+							<groups/>
+						</GeometrySet>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+						<!--transform relative to owner specified as 3 rotations (rad) followed by
+						    3 translations rX rY rZ tx ty tz-->
+						<transform>      -0.00000000       0.00000000      -0.00000000       0.00000000       0.00000000       0.00000000 </transform>
+						<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes>
+						<!--Display Pref. 0:Hide 1:Wire 3:Flat 4:Shaded Can be overriden for
+						    individual geometries-->
+						<display_preference> 4 </display_preference>
+					</VisibleObject>
+					<PathWrapSet name="">
+						<objects/>
+						<groups/>
+					</PathWrapSet>
+				</GeometryPath>
+				<!--Scale factor for normalizing time-->
+				<time_scale>       0.10000000 </time_scale>
+				<!--Parameter used in time constant of ramping up of muscle force-->
+				<activation1>       0.01000000 </activation1>
+				<!--Parameter used in time constant of ramping up and ramping down of
+				    muscle force-->
+				<activation2>       0.04000000 </activation2>
+				<!--Maximum isometric force that the fibers can generate-->
+				<max_isometric_force>     546.00000000 </max_isometric_force>
+				<!--Optimal length of the muscle fibers-->
+				<optimal_fiber_length>       0.05350000 </optimal_fiber_length>
+				<!--Resting length of the tendon-->
+				<tendon_slack_length>       0.07800000 </tendon_slack_length>
+				<!--Angle between tendon and fibers at optimal fiber length-->
+				<pennation_angle>       0.13962634 </pennation_angle>
+				<!--Maximum contraction velocity of the fibers, in optimal fiberlengths
+				    per second-->
+				<max_contraction_velocity>      10.00000000 </max_contraction_velocity>
+				<!--Damping factor related to maximum contraction velocity-->
+				<damping>       0.05000000 </damping>
+				<!--Function representing force-length behavior of tendon-->
+				<tendon_force_length_curve>
+					<NaturalCubicSpline name="">
+						<x>     -10.00000000      -0.00200000      -0.00100000       0.00000000       0.00131000       0.00281000       0.00431000       0.00581000       0.00731000       0.00881000       0.01030000       0.01180000       0.01230000       9.20000000       9.20100000       9.20200000      20.00000000 </x>
+						<y>       0.00000000       0.00000000       0.00000000       0.00000000       0.01080000       0.02570000       0.04350000       0.06520000       0.09150000       0.12300000       0.16100000       0.20800000       0.22700000     345.00000000     345.00000000     345.00000000     345.00000000 </y>
+					</NaturalCubicSpline>
+				</tendon_force_length_curve>
+				<!--Function representing active force-length behavior of muscle fibers-->
+				<active_force_length_curve>
+					<NaturalCubicSpline name="">
+						<x>     -35.00000000       0.00000000       0.40100000       0.40200000       0.40350000       0.52725000       0.62875000       0.71875000       0.86125000       1.04500000       1.21750000       1.43875000       1.61875000       1.62000000       1.62100000       2.20000000      35.00000000 </x>
+						<y>       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.22666700       0.63666700       0.85666700       0.95000000       0.99333300       0.77000000       0.24666700       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000 </y>
+					</NaturalCubicSpline>
+				</active_force_length_curve>
+				<!--Function representing passive force-length behavior of muscle fibers-->
+				<passive_force_length_curve>
+					<NaturalCubicSpline name="">
+						<x>     -35.00000000       0.99800000       0.99900000       1.15000000       1.25000000       1.35000000       1.45000000       1.55000000       1.65000000       1.75000000       1.75010000       1.75020000      35.00000000 </x>
+						<y>       0.00000000       0.00000000       0.00000000       0.00000000       0.03500000       0.12000000       0.26000000       0.55000000       1.17000000       2.00000000       2.00000000       2.00000000       2.00000000 </y>
+					</NaturalCubicSpline>
+				</passive_force_length_curve>
+			</Schutte1993Muscle>
+			<Delp1990Muscle name="default">
+				<isDisabled> false </isDisabled>
+				<!--Minimum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<min_control>       0.01000000 </min_control>
+				<!--Maximum allowed value for control signal. Used primarily when solving
+				    for control values-->
+				<max_control>       1.00000000 </max_control>
+				<GeometryPath name="">
+					<PathPointSet name="">
+						<objects/>
+						<groups/>
+					</PathPointSet>
+					<VisibleObject name="">
+						<!--Set of geometry files and associated attributes, allow .vtp, .stl,
+						    .obj-->
+						<GeometrySet name="">
+							<objects/>
+							<groups/>
+						</GeometrySet>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+						<!--transform relative to owner specified as 3 rotations (rad) followed by
+						    3 translations rX rY rZ tx ty tz-->
+						<transform>      -0.00000000       0.00000000      -0.00000000       0.00000000       0.00000000       0.00000000 </transform>
+						<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes>
+						<!--Display Pref. 0:Hide 1:Wire 3:Flat 4:Shaded Can be overriden for
+						    individual geometries-->
+						<display_preference> 4 </display_preference>
+					</VisibleObject>
+					<PathWrapSet name="">
+						<objects/>
+						<groups/>
+					</PathWrapSet>
+				</GeometryPath>
+				<!--Scale factor for normalizing time-->
+				<time_scale>       0.10000000 </time_scale>
+				<!--Parameter used in time constant of ramping up of muscle force-->
+				<activation1>       0.01000000 </activation1>
+				<!--Parameter used in time constant of ramping up and ramping down of
+				    muscle force-->
+				<activation2>       0.04000000 </activation2>
+				<!--Maximum isometric force that the fibers can generate-->
+				<max_isometric_force>     546.00000000 </max_isometric_force>
+				<!--Optimal length of the muscle fibers-->
+				<optimal_fiber_length>       0.05350000 </optimal_fiber_length>
+				<!--Resting length of the tendon-->
+				<tendon_slack_length>       0.07800000 </tendon_slack_length>
+				<!--Angle between tendon and fibers at optimal fiber length-->
+				<pennation_angle>       0.13962634 </pennation_angle>
+				<!--Maximum contraction velocity of the fibers, in optimal fiberlengths
+				    per second-->
+				<max_contraction_velocity>      10.00000000 </max_contraction_velocity>
+				<!--Normalized mass of the muscle between the tendon and muscle fibers-->
+				<mass>       0.00287000 </mass>
+				<!--Function representing force-length behavior of tendon-->
+				<tendon_force_length_curve>
+					<NaturalCubicSpline name="">
+						<x>     -10.00000000      -0.00200000      -0.00100000       0.00000000       0.00131000       0.00281000       0.00431000       0.00581000       0.00731000       0.00881000       0.01030000       0.01180000       0.01230000       9.20000000       9.20100000       9.20200000      20.00000000 </x>
+						<y>       0.00000000       0.00000000       0.00000000       0.00000000       0.01080000       0.02570000       0.04350000       0.06520000       0.09150000       0.12300000       0.16100000       0.20800000       0.22700000     345.00000000     345.00000000     345.00000000     345.00000000 </y>
+					</NaturalCubicSpline>
+				</tendon_force_length_curve>
+				<!--Function representing active force-length behavior of muscle fibers-->
+				<active_force_length_curve>
+					<NaturalCubicSpline name="">
+						<x>     -35.00000000       0.00000000       0.40100000       0.40200000       0.40350000       0.52725000       0.62875000       0.71875000       0.86125000       1.04500000       1.21750000       1.43875000       1.61875000       1.62000000       1.62100000       2.20000000      35.00000000 </x>
+						<y>       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.22666700       0.63666700       0.85666700       0.95000000       0.99333300       0.77000000       0.24666700       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000 </y>
+					</NaturalCubicSpline>
+				</active_force_length_curve>
+				<!--Function representing passive force-length behavior of muscle fibers-->
+				<passive_force_length_curve>
+					<NaturalCubicSpline name="">
+						<x>     -35.00000000       0.99800000       0.99900000       1.15000000       1.25000000       1.35000000       1.45000000       1.55000000       1.65000000       1.75000000       1.75010000       1.75020000      35.00000000 </x>
+						<y>       0.00000000       0.00000000       0.00000000       0.00000000       0.03500000       0.12000000       0.26000000       0.55000000       1.17000000       2.00000000       2.00000000       2.00000000       2.00000000 </y>
+					</NaturalCubicSpline>
+				</passive_force_length_curve>
+				<!--Function representing force-velocity behavior of muscle fibers-->
+				<force_velocity_curve>
+					<NaturalCubicSpline name="">
+						<x>      -1.00100000      -1.00000000      -0.95000000      -0.90000000      -0.85000000      -0.80000000      -0.75000000      -0.70000000      -0.65000000      -0.60000000      -0.55000000      -0.50000000      -0.45000000      -0.40000000      -0.35000000      -0.30000000      -0.25000000      -0.20000000      -0.15000000      -0.10000000      -0.05000000       0.00000000       0.05000000       0.10000000       0.15000000       0.20000000       0.25000000       0.30000000       0.35000000       0.40000000       0.45000000       0.50000000       0.55000000       0.60000000       0.65000000       0.70000000       0.75000000       0.80000000       0.85000000       0.90000000       0.95000000       1.00000000 </x>
+						<y>       0.00000000       0.00000000       0.01041700       0.02173900       0.03409100       0.04761900       0.06250000       0.07894700       0.09722200       0.11764700       0.14062500       0.16666700       0.19642900       0.23076900       0.27083300       0.31818200       0.37500000       0.44444400       0.53125000       0.64285700       0.79166700       1.00000000       1.48201400       1.60157100       1.65579100       1.68673900       1.70675100       1.72075300       1.73109900       1.73905500       1.74536500       1.75049000       1.75473600       1.75831200       1.76136400       1.76399900       1.76629800       1.76832100       1.77011500       1.77171700       1.77315500       1.77445500 </y>
+					</NaturalCubicSpline>
+				</force_velocity_curve>
+			</Delp1990Muscle>
+			<CorrectionController name="default">
+				<!--A list of actuators that this controller will control.The keyword ALL
+				    indicates the controller will controll all the acuators in the model-->
+				<actuator_list> </actuator_list>
+				<!--Flag (true or false) indicating whether or not the controller is
+				    enabled (ON) should-->
+				<enable_controller> false </enable_controller>
+				<!--Gain for position errors-->
+				<kp>     100.00000000 </kp>
+				<!--Gain for velocity errors-->
+				<kv>      20.00000000 </kv>
+			</CorrectionController>
+			<CMC_Joint name="default">
+				<!--Flag (true or false) indicating whether or not a task is on.-->
+				<on> false </on>
+				<!--Weight with which a task is tracked relative to other tasks. To track
+				    a task more tightly, make the weight larger.-->
+				<weight>       1.00000000       1.00000000       1.00000000 </weight>
+				<!--Name of body frame with respect to which a tracking objective is
+				    specified. The special name 'center_of_mass' refers to the system
+				    center of mass. This property is not used for tracking joint angles.-->
+				<wrt_body> -1 </wrt_body>
+				<!--Name of body frame in which the tracking objectives are expressed.
+				    This property is not used for tracking joint angles.-->
+				<express_body> -1 </express_body>
+				<!--Array of 3 flags (each true or false) specifying whether a component
+				    of a task is active.  For example, tracking the trajectory of a point
+				    in space could have three components (x,y,z).  This allows each of
+				    those to be made active (true) or inactive (false).  A task for
+				    tracking a joint coordinate only has one component.-->
+				<active> false false false </active>
+				<!--Position error feedback gain (stiffness). To achieve critical damping
+				    of errors, choose kv = 2*sqrt(kp).-->
+				<kp>       1.00000000       1.00000000       1.00000000 </kp>
+				<!--Velocity error feedback gain (damping). To achieve critical damping of
+				    errors, choose kv = 2*sqrt(kp).-->
+				<kv>       1.00000000       1.00000000       1.00000000 </kv>
+				<!--Feedforward acceleration gain.  This is normally set to 1.0, so no
+				    gain.-->
+				<ka>       1.00000000       1.00000000       1.00000000 </ka>
+				<!--Direction vector[3] for component 0 of a task. Joint tasks do not use
+				    this propery.-->
+				<r0>       0.00000000       0.00000000       0.00000000 </r0>
+				<!--Direction vector[3] for component 1 of a task. Joint tasks do not use
+				    this property.-->
+				<r1>       0.00000000       0.00000000       0.00000000 </r1>
+				<!--Direction vector[3] for component 2 of a task. Joint tasks do not use
+				    this property.-->
+				<r2>       0.00000000       0.00000000       0.00000000 </r2>
+				<!--Name of the coordinate to be tracked.-->
+				<coordinate>  </coordinate>
+				<!--Error limit on the tracking accuracy for this coordinate. If the
+				    tracking errors approach this limit, the weighting for this coordinate
+				    is increased.-->
+				<limit>       0.00000000 </limit>
+			</CMC_Joint>
+		</defaults>
+		<credits> Georg Stillfried, Karolina Stonawska, Ulrich Hillenbrand, Marcus Settles, Patrick van der Smagt </credits>
+		<publications> Movement model of a human hand based on magnetic resonance imaging (MRI), International Conference on Applied Bionics and Biomechanics (ICABB) 2010, Venice. </publications>
+		<ForceSet name="">
+			<objects>
+			</objects>
+			<groups>
+			</groups>
+		</ForceSet>
+		<length_units> meters </length_units>
+		<force_units> N </force_units>
+		<!--Acceleration due to gravity.-->
+		<gravity>       0.00000000      -9.80665000       0.00000000 </gravity>
+		<!--Bodies in the model.-->
+		<BodySet name="">
+			<objects>
+				<Body name="ground">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint/>
+					<VisibleObject name="">
+						<geometry_files> bone2_1.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MCP2a">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="MCP2a">
+							<parent_body> ground </parent_body>
+							<location_in_parent>       0.00112756      -0.02894003      -0.00258697 </location_in_parent>
+							<orientation_in_parent>      -2.97153179       0.17373322       1.59226478 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="MCP2a">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.85521133 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.55000000       1.37300000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> MCP2a </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MCP2b">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="MCP2b">
+							<parent_body> MCP2a </parent_body>
+							<location_in_parent>       0.00000000      -0.00000000       0.00000000 </location_in_parent>
+							<orientation_in_parent>      -1.57079550      -0.03952681       1.84401960 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="MCP2b">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.31415927 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.32300000       0.87100000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> MCP2b </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PP2">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PP2">
+							<parent_body> MCP2b </parent_body>
+							<location_in_parent>      -0.01266949      -0.01784861      -0.02001128 </location_in_parent>
+							<orientation_in_parent>       2.38942248       1.09476415      -1.49732892 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone2_2.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PIP2">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="PIP2">
+							<parent_body> PP2 </parent_body>
+							<location_in_parent>       0.00266634      -0.01770148       0.00149144 </location_in_parent>
+							<orientation_in_parent>       3.02407870       0.32603526      -2.45465167 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="PIP2">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.40142573 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -1.63800000       0.54100000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> PIP2 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PM2">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PM2">
+							<parent_body> PIP2 </parent_body>
+							<location_in_parent>      -0.01430452      -0.00863928       0.00285207 </location_in_parent>
+							<orientation_in_parent>       2.84756957       0.01994079      -2.10444362 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone2_3.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="DIP2">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="DIP2">
+							<parent_body> PM2 </parent_body>
+							<location_in_parent>       0.00114957      -0.01167801       0.00171634 </location_in_parent>
+							<orientation_in_parent>       3.10919338       0.05910672      -2.13892284 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="DIP2">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.31415927 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -1.06600000       1.12900000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> DIP2 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PD2">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PD2">
+							<parent_body> DIP2 </parent_body>
+							<location_in_parent>      -0.01085286      -0.00165782       0.00180878 </location_in_parent>
+							<orientation_in_parent>      -3.12872874      -0.05112821      -1.84226152 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone2_4.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="CMC1a">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="CMC1a">
+							<parent_body> ground </parent_body>
+							<location_in_parent>       0.01950111       0.02695073       0.00443441 </location_in_parent>
+							<orientation_in_parent>       2.48727972      -0.14754712       0.42888542 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="CMC1a">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.03490659 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.92900000       0.27000000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> CMC1a </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="CMC1b">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="CMC1b">
+							<parent_body> CMC1a </parent_body>
+							<location_in_parent>      -0.01737179      -0.00971473       0.00000009 </location_in_parent>
+							<orientation_in_parent>      -1.38515604      -0.50255759       0.65691919 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="CMC1b">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.18598837 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.67500000       0.18600000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> CMC1b </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MC1">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="MC1">
+							<parent_body> CMC1b </parent_body>
+							<location_in_parent>       0.03354848      -0.01248297       0.01216455 </location_in_parent>
+							<orientation_in_parent>      -2.86224591       0.85165352       1.94658162 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone1_1.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MCP1a">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="MCP1a">
+							<parent_body> MC1 </parent_body>
+							<location_in_parent>       0.00137157      -0.01779916      -0.00084812 </location_in_parent>
+							<orientation_in_parent>       3.05390316      -0.00793818       0.18044569 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="MCP1a">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.64577182 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.36100000       1.25400000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> MCP1a </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MCP1b">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="MCP1b">
+							<parent_body> MCP1a </parent_body>
+							<location_in_parent>       0.00000000       0.00000000      -0.00000000 </location_in_parent>
+							<orientation_in_parent>       1.57074835      -1.50023702      -1.40701890 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="MCP1b">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.10471976 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.39200000       0.79900000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> MCP1b </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PP1">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PP1">
+							<parent_body> MCP1b </parent_body>
+							<location_in_parent>      -0.00881935      -0.01471952      -0.01733277 </location_in_parent>
+							<orientation_in_parent>       1.57582205       1.03341365      -0.70904904 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone1_2.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="IP1">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="IP1">
+							<parent_body> PP1 </parent_body>
+							<location_in_parent>       0.00191091      -0.01363910       0.00135957 </location_in_parent>
+							<orientation_in_parent>       3.12122280      -0.27341430       2.99378307 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="IP1">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.57595865 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.79000000       1.00300000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> IP1 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PD1">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PD1">
+							<parent_body> IP1 </parent_body>
+							<location_in_parent>      -0.00766590      -0.01410628       0.00128191 </location_in_parent>
+							<orientation_in_parent>      -3.09546303      -0.14637353      -2.76067713 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone1_3.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="IMC3">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="IMC3">
+							<parent_body> ground </parent_body>
+							<location_in_parent>       0.00027300       0.01967667      -0.00381503 </location_in_parent>
+							<orientation_in_parent>       1.77115361      -0.08468856       0.10358527 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="IMC3">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>      -0.06981317 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.07600000       0.27000000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> IMC3 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MC3">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="MC3">
+							<parent_body> IMC3 </parent_body>
+							<location_in_parent>      -0.00495342      -0.00967755       0.01997446 </location_in_parent>
+							<orientation_in_parent>      -1.55662924       0.07360124       0.02460249 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone3_1.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MCP3a">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="MCP3a">
+							<parent_body> MC3 </parent_body>
+							<location_in_parent>       0.00248792      -0.02788517       0.00056535 </location_in_parent>
+							<orientation_in_parent>      -3.06481638       0.18119135       2.34161826 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="MCP3a">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.73303829 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.69100000       1.36500000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> MCP3a </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MCP3b">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="MCP3b">
+							<parent_body> MCP3a </parent_body>
+							<location_in_parent>      -0.00000000      -0.00000000       0.00000000 </location_in_parent>
+							<orientation_in_parent>      -1.57079566       0.73740682       1.70278058 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="MCP3b">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.26179939 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.36100000       0.37900000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> MCP3b </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PP3">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PP3">
+							<parent_body> MCP3b </parent_body>
+							<location_in_parent>      -0.00585579      -0.02263291      -0.02216632 </location_in_parent>
+							<orientation_in_parent>       2.83024779       1.38722461      -2.01567947 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone3_2.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PIP3">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="PIP3">
+							<parent_body> PP3 </parent_body>
+							<location_in_parent>       0.00297529      -0.01983706       0.00041341 </location_in_parent>
+							<orientation_in_parent>      -3.10128167       0.05160920       1.81548014 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="PIP3">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.57595865 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -1.41900000       0.80300000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> PIP3 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PM3">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PM3">
+							<parent_body> PIP3 </parent_body>
+							<location_in_parent>       0.01280160      -0.01464960       0.00044222 </location_in_parent>
+							<orientation_in_parent>      -3.10704455      -0.03576496       2.41416195 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone3_3.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="DIP3">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="DIP3">
+							<parent_body> PM3 </parent_body>
+							<location_in_parent>       0.00011917      -0.01368763      -0.00012773 </location_in_parent>
+							<orientation_in_parent>      -3.06294799       0.29509605       2.62405259 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="DIP3">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.33161256 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -1.20600000       0.69800000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> DIP3 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PD3">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PD3">
+							<parent_body> DIP3 </parent_body>
+							<location_in_parent>       0.00232482      -0.01259866       0.00071799 </location_in_parent>
+							<orientation_in_parent>       3.05394581      -0.27222667       2.95387451 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone3_4.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="IMC4">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="IMC4">
+							<parent_body> MC3 </parent_body>
+							<location_in_parent>       0.00060402       0.02840978      -0.00801060 </location_in_parent>
+							<orientation_in_parent>       1.27408673      -0.19279634       0.14286132 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="IMC4">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>      -0.06981317 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.08500000       0.27600000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> IMC4 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MC4">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="MC4">
+							<parent_body> IMC4 </parent_body>
+							<location_in_parent>       0.00303550      -0.01287090       0.02243187 </location_in_parent>
+							<orientation_in_parent>      -1.14607211       0.08117748       0.23798861 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone4_1.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MCP4a">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="MCP4a">
+							<parent_body> MC4 </parent_body>
+							<location_in_parent>       0.00073153      -0.02481215      -0.00146137 </location_in_parent>
+							<orientation_in_parent>      -3.02998578       0.00639050       0.11427495 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="MCP4a">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.41887902 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -1.05200000       1.18000000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> MCP4a </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MCP4b">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="MCP4b">
+							<parent_body> MCP4a </parent_body>
+							<location_in_parent>       0.00000000       0.00000000       0.00000000 </location_in_parent>
+							<orientation_in_parent>       1.57079839      -1.09804202      -0.88958452 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="MCP4b">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.10471976 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.47800000       0.29900000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> MCP4b </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PP4">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PP4">
+							<parent_body> MCP4b </parent_body>
+							<location_in_parent>      -0.00768566      -0.01508707      -0.02405368 </location_in_parent>
+							<orientation_in_parent>       1.46950823       1.04700602      -0.52205631 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone4_2.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PIP4">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="PIP4">
+							<parent_body> PP4 </parent_body>
+							<location_in_parent>       0.00013924      -0.01885876      -0.00029457 </location_in_parent>
+							<orientation_in_parent>       3.14059037       0.01510742      -3.00910220 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="PIP4">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.62831853 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -1.37900000       0.90200000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> PIP4 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PM4">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PM4">
+							<parent_body> PIP4 </parent_body>
+							<location_in_parent>      -0.01195950      -0.01470671      -0.00124534 </location_in_parent>
+							<orientation_in_parent>      -3.06599860       0.08018364      -2.41479747 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone4_3.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="DIP4">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="DIP4">
+							<parent_body> PM4 </parent_body>
+							<location_in_parent>       0.00020388      -0.01304283       0.00054321 </location_in_parent>
+							<orientation_in_parent>      -3.13801870      -0.03828433      -2.95544903 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="DIP4">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.57595865 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.96500000       0.98700000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> DIP4 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PD4">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PD4">
+							<parent_body> DIP4 </parent_body>
+							<location_in_parent>      -0.00880145      -0.00893865      -0.00069371 </location_in_parent>
+							<orientation_in_parent>      -3.09415564       0.05304218      -2.43282788 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone4_4.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="IMC5">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="IMC5">
+							<parent_body> MC4 </parent_body>
+							<location_in_parent>       0.00133314       0.02238944      -0.00555069 </location_in_parent>
+							<orientation_in_parent>       1.42155170      -0.03266849       0.02812425 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="IMC5">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>      -0.26179939 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.26500000       0.13500000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> IMC5 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MC5">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="MC5">
+							<parent_body> IMC5 </parent_body>
+							<location_in_parent>       0.00258619      -0.01433440       0.01765157 </location_in_parent>
+							<orientation_in_parent>      -1.28525283       0.01422445       0.05413693 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone5_1.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MCP5a">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="MCP5a">
+							<parent_body> MC5 </parent_body>
+							<location_in_parent>       0.00175437      -0.02346684       0.00120119 </location_in_parent>
+							<orientation_in_parent>      -1.59299831      -1.08353920      -1.10326000 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="MCP5a">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.10471976 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -0.65000000       0.30500000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> MCP5a </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="MCP5b">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="MCP5b">
+							<parent_body> MCP5a </parent_body>
+							<location_in_parent>      -0.00000000      -0.00000000      -0.00000000 </location_in_parent>
+							<orientation_in_parent>      -1.57079298      -1.17960216       1.84234675 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="MCP5b">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.29670597 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -1.47200000       1.21300000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> MCP5b </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PP5">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PP5">
+							<parent_body> MCP5b </parent_body>
+							<location_in_parent>       0.01915435       0.01451382      -0.00058784 </location_in_parent>
+							<orientation_in_parent>       3.06603282      -0.02226447       0.98785062 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone5_2.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PIP5">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="PIP5">
+							<parent_body> PP5 </parent_body>
+							<location_in_parent>       0.00101144      -0.01550217      -0.00049949 </location_in_parent>
+							<orientation_in_parent>      -3.09076509       0.22127951       2.69171742 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="PIP5">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.00000000 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -1.84600000       0.25300000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> PIP5 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PM5">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PM5">
+							<parent_body> PIP5 </parent_body>
+							<location_in_parent>       0.00633628      -0.01348262      -0.00081588 </location_in_parent>
+							<orientation_in_parent>      -3.08756063      -0.02893475       2.67523487 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone5_3.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="DIP5">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<CustomJoint name="DIP5">
+							<parent_body> PM5 </parent_body>
+							<location_in_parent>       0.00018060      -0.01005921      -0.00268002 </location_in_parent>
+							<orientation_in_parent>       3.11811207      -0.07074845       2.50091568 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects>
+									<Coordinate name="DIP5">
+										<!--Cooridnate can describe rotational, translational, or coupled values.
+										    Defaults to rotational.-->
+										<motion_type> rotational </motion_type>
+										<default_value>       0.08726646 </default_value>
+										<default_speed_value>       0.00000000 </default_speed_value>
+										<initial_value>       0.00000000 </initial_value>
+										<range>      -1.43900000       0.36900000 </range>
+										<clamped> false </clamped>
+										<locked> false </locked>
+										<prescribed_function/>
+									</Coordinate>
+								</objects>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+							<SpatialTransform name="">
+								<!--3 Axes for rotations are listed first.-->
+								<TransformAxis name="rotation1">
+									<function>
+										<LinearFunction name="">
+										<coefficients>       1.00000000       0.00000000 </coefficients>
+									</LinearFunction>
+								</function>
+								<coordinates> DIP5 </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="rotation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<!--3 Axes for translations are listed next.-->
+							<TransformAxis name="translation1">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       1.00000000       0.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation2">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       1.00000000       0.00000000 </axis>
+							</TransformAxis>
+							<TransformAxis name="translation3">
+								<function>
+									<Constant name="">
+										<value>       0.00000000 </value>
+									</Constant>
+								</function>
+								<coordinates> </coordinates>
+								<axis>       0.00000000       0.00000000       1.00000000 </axis>
+								</TransformAxis>
+							</SpatialTransform>
+						</CustomJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files>  </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+				<Body name="PD5">
+					<mass>       0.00000000 </mass>
+					<mass_center>       0.00000000       0.00000000       0.00000000 </mass_center>
+					<inertia_xx>       0.00000000 </inertia_xx>
+					<inertia_yy>       0.00000000 </inertia_yy>
+					<inertia_zz>       0.00000000 </inertia_zz>
+					<inertia_xy>       0.00000000 </inertia_xy>
+					<inertia_xz>       0.00000000 </inertia_xz>
+					<inertia_yz>       0.00000000 </inertia_yz>
+					<!--Joint that connects this body with the parent body.-->
+					<Joint>
+						<WeldJoint name="PD5">
+							<parent_body> DIP5 </parent_body>
+							<location_in_parent>       0.00488881      -0.01017181      -0.00487303 </location_in_parent>
+							<orientation_in_parent>      -2.93711186       0.01507082       2.62733466 </orientation_in_parent>
+							<location>       0.00000000       0.00000000       0.00000000 </location>
+							<orientation>       0.00000000       0.00000000       0.00000000 </orientation>
+							<!--Generalized coordinates parameterizing this joint.-->
+							<CoordinateSet name="">
+								<objects/>
+								<groups/>
+							</CoordinateSet>
+							<reverse> false </reverse>
+						</WeldJoint>
+					</Joint>
+					<VisibleObject name="">
+						<geometry_files> bone5_4.vtp </geometry_files>
+						<VisibleProperties name="">
+							<display_preference> 4 </display_preference>
+							<show_normals> false </show_normals>
+							
+							<material_name> DEFAULT </material_name>
+						</VisibleProperties>
+						<!--Three scale factors for display purposes: scaleX scaleY scaleZ-->
+						<scale_factors>       1.00000000       1.00000000       1.00000000 </scale_factors>
+					<!--Whether to show a coordinate frame-->
+						<show_axes> false </show_axes></VisibleObject>
+					<WrapObjectSet name="">
+						<objects/>
+						<groups/>
+					</WrapObjectSet>
+				</Body>
+
+			</objects>
+			<groups/>
+		</BodySet>
+		<!--Constraints in the model.-->
+		<ConstraintSet name="">
+			<objects>
+			</objects>
+			<groups/>
+		</ConstraintSet>
+		<!--Markers in the model.-->
+		<MarkerSet name="">
+			<objects/>
+			<groups/>
+		</MarkerSet>
+		<!--ContactGeometry objects in the model.-->
+		<ContactGeometrySet name="">
+			<objects/>
+			<groups/>
+		</ContactGeometrySet>
+	</Model>
+</OpenSimDocument>
+
